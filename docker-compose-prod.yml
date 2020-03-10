@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+
+  db:
+    image: postgres:11.5-alpine
+    networks:
+      - network
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=app
+    volumes:
+      - /var/lib/postgresql
+      - /var/lib/postgresql/data
+
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    networks:
+      - network
+    environment:
+      - DB_URL=db
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  postgresql:
+  postgresql_data:
