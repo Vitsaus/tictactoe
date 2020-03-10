@@ -1,5 +1,14 @@
 ## Tic tac toe
 
+## Simple API server
+Technologies used: Typescript, Express.js, TypeORM, docker(for spinning up db), Jest, supertest, PostgreSQL
+
+Games are saved in games-table and moves for games are stored for moves-table. 4 api endpoints are available.
+
+Actual server is small express.js app which is created in index.ts. Routes are declared in server.ts. TypeORM takes care
+of db operations & migrations. Docker deals with spinning up the actual database. Api uses lightweight implementation
+of DDD and other design patterns often used in API side.
+
 ## Run locally
 
 To install dependencies for running locally:
