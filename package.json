@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/node": "^13.9.0",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.11.0",
+    "class-validator": "^0.14.0",
     "express.js": "^1.0.0",
     "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
